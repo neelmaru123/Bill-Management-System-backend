@@ -1,0 +1,4 @@
+node_modules/
+.env
+
+MONGODB_URI=mongodb+srv://neelmaru63:neelmaru63@cluster0.ewl7mj7.mongodb.net/?retryWrites=true&w=majority
