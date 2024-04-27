@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const serverless = require("serverless-http");
 const {
     getAllBills,
     createNewBill,
@@ -8,6 +8,7 @@ const {
     deleteBill,
     getBillById,
 } = require("../controllers/billController");
+
 
 router
   .route("/")
@@ -20,4 +21,4 @@ router
   .put(updateBill)
   .delete(deleteBill);
   
-module.exports = router;
+module.exports = serverless(router);
