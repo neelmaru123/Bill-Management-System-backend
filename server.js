@@ -13,7 +13,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const connectDB = require("./config/dbConnection");
 const Bill = require("./model/Bill");
-const PORT =  3500;
+const PORT = process.env.PORT || 3500;
 
 //connect to mongoDB
 connectDB();
