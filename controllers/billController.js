@@ -28,6 +28,7 @@ const createNewBill = async (req, res) => {
     if (req.body?.paidAmount) newBill.paidAmount = req.body.paidAmount;
     if (req.body?.dueAmount) newBill.dueAmount = req.body.dueAmount;
     if (req.body?.gtsPercent) newBill.gtsPercent = req.body.gtsPercent;
+    if (req.body?.financialYear) newBill.financialYear = req.body.financialYear;
 
 
     try {
@@ -45,6 +46,7 @@ const updateBill = async (req, res) => {
 
     const bill = await Bill.findOne({ _id: req.params.id }).exec();
     console.log(req.body)
+    
 
     if (!bill) {
         return res
@@ -63,6 +65,7 @@ const updateBill = async (req, res) => {
     bill.dueAmount = req.body.dueAmount;
     if (req.body?.gtsPercent) bill.gtsPercent = req.body.gtsPercent;
     if (req.body?.days) bill.days = req.body.days;
+    if (req.body?.financialYear) bill.financialYear = req.body.financialYear;
 
     const result = await bill.save();
     res.json({ success: true, result: result });

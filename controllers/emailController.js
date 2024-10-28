@@ -24,7 +24,7 @@ async function sendEmail(email, otp) {
   console.log('Message sent: %s', info.messageId);
 }
 
-sendEmail('recipient-email@gmail.com', '123456');
+// sendEmail('recipient-email@gmail.com', '123456');
 
 const sendOTP = async (req, res) => {
     const { email } = req.body;
@@ -34,7 +34,7 @@ const sendOTP = async (req, res) => {
     // Send the OTP to the user's email
     await sendEmail(email, otp);
     
-    res.json({ otp });
+    // res.json({ otp });
 };
 
 module.exports = { sendOTP };

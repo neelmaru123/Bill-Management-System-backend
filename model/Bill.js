@@ -38,6 +38,9 @@ const billSchema = new Schema({
   days: {
     type: Number,
   },
+  financialYear: {
+    type: String,
+  },
 });
 
 // billSchema.pre('save', function(next) {

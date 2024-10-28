@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const serverless = require("serverless-http");
+
 
 const {
     getAllTransactions,
@@ -23,4 +23,4 @@ router
     .put(updateTransaction)
     .delete(deleteTransaction);
 
-module.exports = serverless(router);
+module.exports = router;

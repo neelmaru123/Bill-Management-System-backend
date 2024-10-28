@@ -13,7 +13,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const connectDB = require("./config/dbConnection");
 const Bill = require("./model/Bill");
-const PORT = process.env.PORT || 3500;
+  const PORT = process.env.PORT || 3500;
 
 //connect to mongoDB
 connectDB();
@@ -31,11 +31,7 @@ const { sendOTP } = require('./controllers/emailController');
 const { log } = require("console");
 app.post('/sendOTP', sendOTP);
 
-
 app.use("/", express.static(path.join(__dirname, "public")));
-
-
-
 
 mongoose.connection.once("open", () => {
   console.log("connected to mongoDB");
